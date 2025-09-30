@@ -92,6 +92,7 @@ export const postRouter = router({
         id: z.string().uuid().optional(),
         title: z.string().min(1).max(32),
         text: z.string().min(1),
+        email: z.string().email(),
       }),
     )
     .mutation(async ({ input }) => {
