@@ -112,6 +112,7 @@ const IndexPage: NextPageWithLayout = () => {
             const input: Input = {
               title: values.title as string,
               text: values.text as string,
+              email: values.email as string,
             };
             try {
               await addPost.mutateAsync(input);
@@ -139,7 +140,14 @@ const IndexPage: NextPageWithLayout = () => {
               disabled={addPost.isPending}
               rows={6}
             />
-
+            <input
+              className="focus-visible:outline-dashed outline-offset-4 outline-2 outline-gray-700 rounded-xl px-4 py-3 bg-gray-900"
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Email"
+              disabled={addPost.isPending}
+            />
             <div className="flex justify-center">
               <input
                 className="cursor-pointer bg-gray-900 p-2 rounded-md px-16"
